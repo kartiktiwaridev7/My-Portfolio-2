@@ -302,7 +302,36 @@ h1 {
     font-size: 1.1rem;
     margin-bottom: 20px;
 }
+#About_myself {
+    /* 1. Typography Improvements */
+    font-size: 1.1rem;
+    line-height: 1.8; /* Increases vertical space between lines for readability */
+    color: #a8b2d1;   /* A softer, slightly blue-tinted grey (easier on eyes than pure white) */
+    font-weight: 400;
+    
+    /* 2. Layout & Spacing */
+    max-width: 500px; /* Prevents the text from stretching too wide across the screen */
+    margin-top: 1.5rem;
+    margin-bottom: 2rem;
+    
+    /* 3. Visual Polish */
+    text-align: left;
+    letter-spacing: 0.2px; /* Adds a tiny bit of space between letters for a cleaner look */
+    position: relative;
+}
 
+/* Optional: Adding a subtle left border to give it a "quote" or "intro" feel */
+#About_myself::before {
+    content: "";
+    position: absolute;
+    left: -20px;
+    top: 5px;
+    bottom: 5px;
+    width: 3px;
+    background: linear-gradient(to bottom, #00d2ff, #928dab); /* Matches your "Code" gradient */
+    border-radius: 2px;
+    opacity: 0.6;
+}
 .skills-title {
     font-size: 1.8rem;
     margin-bottom: 30px;
@@ -527,6 +556,12 @@ h1 {
     margin-top: 20px;
     position: relative;
     z-index: 10;
+}
+#linkdin_color:hover{
+    background-color: #0A66C2;
+}
+#X:hover{
+    background-color: #000000;
 }
 
 /* --- RESPONSIVE ADJUSTMENTS --- */
