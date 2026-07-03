@@ -1,341 +1,325 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <!-- ═══ SEO & Social Meta ═══ -->
-    <title>Kartik Tiwari | Frontend & Data Engineer</title>
-    <meta name="description" content="BCA student building AI agents, frontend interfaces, and ML-integrated web applications. Explore projects and achievements.">
-    <meta name="author" content="Kartik Tiwari">
-    <meta name="keywords" content="Kartik Tiwari, Frontend Developer, Data Analyst, AI Agent, Machine Learning, Portfolio">
+<title>Kartik Tiwari — Frontend Developer, Data & ML</title>
+<meta name="description" content="Kartik Tiwari is a BCA student building frontend applications and machine-learning-integrated tools. Selected work, skills, and milestones.">
+<meta name="author" content="Kartik Tiwari">
 
-    <!-- Open Graph (looks great when shared on LinkedIn / WhatsApp) -->
-    <meta property="og:type"        content="website">
-    <meta property="og:title"       content="Kartik Tiwari | Frontend & Data Engineer">
-    <meta property="og:description" content="BCA student building AI agents, frontend interfaces, and ML-integrated web applications.">
-    <meta property="og:url"         content="https://kartiktiwaridev7.github.io/">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Kartik Tiwari — Frontend Developer, Data & ML">
+<meta property="og:description" content="Interfaces backed by real data and machine learning. Selected work by Kartik Tiwari.">
+<meta property="og:url" content="https://kartiktiwaridev7.github.io/">
+<meta property="og:image" content="https://kartiktiwaridev7.github.io/social-preview.jpg">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
 
-    <!-- Twitter Card -->
-    <meta name="twitter:card"        content="summary">
-    <meta name="twitter:title"       content="Kartik Tiwari | Frontend & Data Engineer">
-    <meta name="twitter:description" content="BCA student building AI agents, frontend interfaces, and ML-integrated web applications.">
-    <meta name="twitter:site"        content="@KartikTiwa15064">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Kartik Tiwari — Frontend Developer, Data & ML">
+<meta name="twitter:description" content="Interfaces backed by real data and machine learning. Selected work by Kartik Tiwari.">
+<meta name="twitter:image" content="https://kartiktiwaridev7.github.io/social-preview.jpg">
+<meta name="twitter:site" content="@KartikTiwa15064">
 
-    <!-- ═══ Fonts ═══ -->
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link rel="canonical" href="https://kartiktiwaridev7.github.io/">
+<link rel="icon" href="favicon.ico" sizes="any">
+<link rel="icon" href="favicon.svg" type="image/svg+xml">
+<link rel="apple-touch-icon" href="apple-touch-icon.png">
 
-    <!-- ═══ Styles ═══ -->
-    <link rel="stylesheet" href="style.css">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,500;9..144,600&family=Fraunces:ital,opsz,wght@1,9..144,500&family=Inter:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
+
+<link rel="stylesheet" href="style.css">
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Person",
+  "name": "Kartik Tiwari",
+  "jobTitle": "Frontend Developer",
+  "description": "BCA student building frontend applications and machine-learning-integrated tools.",
+  "url": "https://kartiktiwaridev7.github.io/",
+  "email": "mailto:kartiktiwari8790@gmail.com",
+  "sameAs": [
+    "https://linkedin.com/in/kartik-tiwari-8b2bb5353/",
+    "https://github.com/kartiktiwaridev7",
+    "https://x.com/KartikTiwa15064"
+  ]
+}
+</script>
 </head>
 <body>
 
-    <!-- ════════════════════════════════════════
-         NAVIGATION
-    ════════════════════════════════════════ -->
-    <nav class="glass-nav" role="navigation" aria-label="Main navigation">
-        <div class="nav-container">
-            <a href="#home" class="logo" aria-label="Kartik Tiwari — back to top">&lt;Kartik Tiwari/&gt;</a>
+<a href="#top" class="skip-link">Skip to content</a>
 
-            <button class="menu-toggle" id="mobile-menu" aria-label="Toggle navigation menu" aria-expanded="false" aria-controls="nav-links">
-                <span class="bar"></span>
-                <span class="bar"></span>
-                <span class="bar"></span>
-            </button>
+<div id="scroll-line" aria-hidden="true"></div>
 
-            <ul class="nav-links" id="nav-links" role="list">
-                <li><a href="#home">Home</a></li>
-                <li><a href="#about">About</a></li>
-                <li><a href="#resume">Achievements</a></li>
-                <li><a href="#contact" class="nav-btn">Contact Me</a></li>
-            </ul>
+<!-- ============== NAV ============== -->
+<nav class="nav" role="navigation" aria-label="Main navigation">
+  <div class="nav-inner">
+    <a href="#top" class="nav-mark">Kartik Tiwari</a>
+
+    <button class="nav-toggle" id="navToggle" aria-label="Toggle navigation menu" aria-expanded="false" aria-controls="navLinks">
+      <span></span><span></span>
+    </button>
+
+    <ul class="nav-links" id="navLinks">
+      <li><a href="#work">Work</a></li>
+      <li><a href="#about">About</a></li>
+      <li><a href="#milestones">Milestones</a></li>
+      <li><a href="#contact">Contact</a></li>
+      <li><a href="Kartik_Tiwari_Resume.pdf" download class="nav-resume">Resume</a></li>
+    </ul>
+  </div>
+</nav>
+
+<!-- ============== HERO ============== -->
+<header id="top" class="hero">
+  <div class="hero-inner">
+
+    <div class="hero-text">
+      <p class="eyebrow reveal">Frontend Developer&nbsp;&middot;&nbsp;Data &amp; ML</p>
+      <h1 class="hero-title reveal">
+        <mark class="name-mark">Kartik Tiwari</mark> builds interfaces<br>
+        that make <em>data</em> make sense.
+      </h1>
+      <p class="hero-sub reveal">
+        BCA student based in India, shipping frontend applications and
+        machine-learning-integrated tools — from classroom attendance systems
+        to an ML-powered heart-risk platform.
+      </p>
+      <div class="hero-actions reveal">
+        <a href="#work" class="btn btn-primary">Selected work</a>
+        <a href="#contact" class="btn btn-ghost">Get in touch</a>
+      </div>
+    </div>
+
+    <div class="hero-media reveal">
+      <div class="hero-media-frame">
+        <!--
+          Replace "profile.jpg" below with your own file.
+          Put the image in the same folder as index.html,
+          named exactly "profile.jpg" (no spaces in filenames —
+          spaces break on some hosts/case-sensitive servers).
+        -->
+        <img src="Portfolio.jpeg" alt="Portrait of Kartik Tiwari" loading="eager" width="800" height="1000">
+      </div>
+      <p class="hero-media-tag">
+        <span class="status-dot" aria-hidden="true"></span>
+        Doing Freelance &amp; Building M.L Models and connect them with the Frontend App
+      </p>
+    </div>
+
+  </div>
+</header>
+
+<!-- ============== WORK ============== -->
+<section id="work" class="section" aria-labelledby="work-heading">
+  <div class="section-inner">
+    <p class="eyebrow reveal">Selected Work</p>
+    <h2 id="work-heading" class="section-title reveal">A few things I've built</h2>
+
+    <ul class="work-list">
+
+      <li class="work-row reveal">
+        <div class="work-main">
+          <h3>ML-Integrated Hospital Management System</h3>
+          <p>A full-stack platform where patients browse doctors, book appointments, and get a heart-disease risk estimate from an ML model integrated end-to-end with Flask.</p>
+          <div class="work-tags">
+            <span>Flask</span><span>Machine Learning</span><span>Full-Stack</span>
+          </div>
         </div>
-    </nav>
-
-    <!-- ════════════════════════════════════════
-         HERO
-    ════════════════════════════════════════ -->
-    <section id="home" class="hero" aria-label="Introduction">
-        <div class="hero-content fade-in">
-            <p class="tech-tagline">Data-Driven</p>
-            <h1>Hi, I'm <span class="gradient-text">Kartik Tiwari</span></h1>
-            <p id="typewriter-text" class="hero-subtitle" aria-live="polite"></p>
-
-            <div class="hero-actions">
-                <a href="#projects" class="btn btn-primary">View My Work</a>
-            </div>
+        <div class="work-meta">
+          <a href="https://cardio-core.netlify.app/" target="_blank" rel="noopener noreferrer" class="work-link">Live project <span aria-hidden="true">→</span></a>
         </div>
-        <div class="glow-orb orb-1" aria-hidden="true"></div>
-        <div class="glow-orb orb-2" aria-hidden="true"></div>
-    </section>
+      </li>
 
-    <!-- ════════════════════════════════════════
-         PROJECTS
-    ════════════════════════════════════════ -->
-    <section id="projects" class="projects-section" aria-labelledby="projects-heading">
-        <div class="section-container">
-            <h2 id="projects-heading" class="section-title fade-in">
-                Featured <span class="gradient-text">Projects</span>
-            </h2>
-
-            <div class="project-grid">
-
-                <!-- Card 1 -->
-                <article class="project-card fade-in">
-                    <div class="card-content">
-                        <div class="project-header">
-                            <span class="folder-icon" aria-hidden="true">📁</span>
-                            <div class="tech-stack">
-                                <span>HTML5</span>
-                                <span>CSS3</span>
-                                <span>JS</span>
-                            </div>
-                        </div>
-                        <h3>Student Attendance System</h3>
-                        <p>A responsive web application utilizing the Web Storage API for client-side persistence and automated CSV report generation via JavaScript Blob objects.</p>
-                        <div class="card-links">
-                            <a href="https://github.com/kartiktiwaridev7/Collage-Project/tree/main" target="_blank" rel="noopener noreferrer" class="text-link">Repository</a>
-                        </div>
-                    </div>
-                </article>
-
-                <!-- Card 2 -->
-                <article class="project-card fade-in">
-                    <div class="card-content">
-                        <div class="project-header">
-                            <span class="folder-icon" aria-hidden="true">📂</span>
-                            <div class="tech-stack">
-                                <span>Python</span>
-                                <span>OOP</span>
-                                <span>Data</span>
-                            </div>
-                        </div>
-                        <h3>Python Systems Suite</h3>
-                        <p>An architecture of OOP-based applications demonstrating logic building, file management, and core problem-solving through a Banking System and Hospital Management framework.</p>
-                        <div class="card-links">
-                            <a href="https://github.com/kartiktiwaridev7/Python-Project-s" target="_blank" rel="noopener noreferrer" class="text-link">Repository</a>
-                        </div>
-                    </div>
-                </article>
-
-                <!-- Card 3 -->
-                <article class="project-card fade-in">
-                    <div class="card-content">
-                        <div class="project-header">
-                            <span class="folder-icon" aria-hidden="true">🤖</span>
-                            <div class="tech-stack">
-                                <span>Agentic AI</span>
-                                <span>Prompt Eng.</span>
-                                <span>Agent.ai</span>
-                            </div>
-                        </div>
-                        <h3>LinkedIn Profile Coach — AI Agent</h3>
-                        <p>An AI agent that scans LinkedIn profile data and generates highly personalized post ideas to boost engagement and visibility. Built and deployed independently on Agent.ai — rated 5.0/5.</p>
-                        <div class="card-links">
-                            <a href="https://agent.ai/agent/srq2a11gg9302cm1?version_id=latest" target="_blank" rel="noopener noreferrer" class="text-link">Live Agent</a>
-                        </div>
-                    </div>
-                </article>
-
-                <!-- Card 4 -->
-                <article class="project-card fade-in">
-                    <div class="card-content">
-                        <div class="project-header">
-                            <span class="folder-icon" aria-hidden="true">📊</span>
-                            <div class="tech-stack">
-                                <span>Data Visualization</span>
-                                <span>JSON</span>
-                                <span>Charts</span>
-                            </div>
-                        </div>
-                        <h3>Data Visualization Tool</h3>
-                        <p>Converts JSON datasets into interactive chart formats, making complex data easy to explore and understand at a glance.</p>
-                        <div class="card-links">
-                            <a href="https://kartiktiwaridev7.github.io/Dashboard/" target="_blank" rel="noopener noreferrer" class="text-link">Live Project</a>
-                        </div>
-                    </div>
-                </article>
-
-                <!-- Card 5 -->
-                <article class="project-card fade-in">
-                    <div class="card-content">
-                        <div class="project-header">
-                            <span class="folder-icon" aria-hidden="true">🩺</span>
-                            <div class="tech-stack">
-                                <span>Full Stack</span>
-                                <span>ML Model</span>
-                                <span>Flask</span>
-                            </div>
-                        </div>
-                        <h3>ML-Integrated Hospital Management System</h3>
-                        <p>A full-stack hospital web app where users can browse doctors, predict heart disease risk by entering medical data via an integrated ML model, and book appointments with server-side persistence.</p>
-                        <div class="card-links">
-                            <a href="https://cardio-core.netlify.app/" target="_blank" rel="noopener noreferrer" class="text-link">Live Project</a>
-                        </div>
-                    </div>
-                </article>
-
-            </div>
+      <li class="work-row reveal">
+        <div class="work-main">
+          <h3>LinkedIn Profile Coach — AI Agent</h3>
+          <p>Reads a LinkedIn profile and generates tailored post ideas to improve engagement. Built and deployed independently on Agent.ai, where it holds a 5.0 rating.</p>
+          <div class="work-tags">
+            <span>Agentic AI</span><span>Prompt Engineering</span>
+          </div>
         </div>
-    </section>
-
-    <!-- ════════════════════════════════════════
-         ABOUT
-    ════════════════════════════════════════ -->
-    <section id="about" class="about-section" aria-labelledby="about-heading">
-        <div class="section-container">
-            <div class="about-grid">
-
-                <div class="about-text fade-in">
-                    <h2 id="about-heading" class="section-title">
-                        Beyond the <span class="gradient-text">Code</span>
-                    </h2>
-                    <p id="About_myself">
-                        Hi, I'm Kartik Tiwari — a BCA student currently building AI models and designing frontend applications. I genuinely love bridging the gap where web interfaces meet machine learning models. I've built a range of projects around this concept — feel free to explore them in my portfolio.
-                    </p>
-                </div>
-
-                <div class="skills-container fade-in">
-                    <h3 class="skills-title">Core Arsenal</h3>
-
-                    <div class="skill-group">
-                        <div class="group-header">
-                            <span class="icon" aria-hidden="true">🤖</span>
-                            <h4>Data &amp; Machine Learning</h4>
-                        </div>
-                        <div class="skill-tags" role="list" aria-label="Data and ML skills">
-                            <span class="glass-tag" role="listitem">Python</span>
-                            <span class="glass-tag" role="listitem">Pandas &amp; NumPy</span>
-                            <span class="glass-tag" role="listitem">Scikit-Learn</span>
-                            <span class="glass-tag" role="listitem">SQL</span>
-                            <span class="glass-tag" role="listitem">Power BI</span>
-                        </div>
-                    </div>
-
-                    <div class="skill-group">
-                        <div class="group-header">
-                            <span class="icon" aria-hidden="true">💻</span>
-                            <h4>Frontend Engineering</h4>
-                        </div>
-                        <div class="skill-tags" role="list" aria-label="Frontend engineering skills">
-                            <span class="glass-tag" role="listitem">HTML5</span>
-                            <span class="glass-tag" role="listitem">CSS3</span>
-                            <span class="glass-tag" role="listitem">JavaScript (ES6+)</span>
-                            <span class="glass-tag" role="listitem">Responsive DOM</span>
-                        </div>
-                    </div>
-                </div>
-
-            </div>
+        <div class="work-meta">
+          <a href="https://agent.ai/agent/srq2a11gg9302cm1?version_id=latest" target="_blank" rel="noopener noreferrer" class="work-link">Live agent <span aria-hidden="true">→</span></a>
         </div>
-    </section>
+      </li>
 
-    <!-- ════════════════════════════════════════
-         ACHIEVEMENTS / TIMELINE
-    ════════════════════════════════════════ -->
-    <section id="resume" class="timeline-section" aria-labelledby="timeline-heading">
-        <div class="section-container">
-            <h2 id="timeline-heading" class="section-title fade-in" style="text-align: center;">
-                Professional <span class="gradient-text">Milestones</span>
-            </h2>
-
-            <div class="timeline">
-
-                <div class="timeline-item fade-in">
-                    <div class="timeline-dot" aria-hidden="true"></div>
-                    <div class="timeline-content project-card">
-                        <span class="date-badge">April 2026</span>
-                        <h2>Certificate of Appreciation</h2>
-                        <h3>Creating an AI Agent</h3>
-                        <h4 class="issuer">Saumya Singh</h4>
-                        <p>An intelligent AI agent that analyses a user's LinkedIn profile data and generates highly personalised post ideas to maximise engagement and visibility. Built and deployed on the Agent.ai platform.</p>
-                    </div>
-                </div>
-
-                <div class="timeline-item fade-in">
-                    <div class="timeline-dot" aria-hidden="true"></div>
-                    <div class="timeline-content project-card">
-                        <span class="date-badge">Feb 2026</span>
-                        <h3>AI &amp; Sustainability Dialogue</h3>
-                        <h4 class="issuer">TERI School of Advanced Studies</h4>
-                        <p>Engaged in critical discussions on the intersection of artificial intelligence and actionable climate change solutions.</p>
-                    </div>
-                </div>
-
-                <div class="timeline-item fade-in">
-                    <div class="timeline-dot" aria-hidden="true"></div>
-                    <div class="timeline-content project-card">
-                        <span class="date-badge">Nov 2025</span>
-                        <h3>Cyber Security &amp; Ethical Hacking</h3>
-                        <h4 class="issuer">HRIT University</h4>
-                        <p>Participated in specialised seminars on modern threat mitigation and data protection methodologies.</p>
-                    </div>
-                </div>
-
-                <div class="timeline-item fade-in">
-                    <div class="timeline-dot" aria-hidden="true"></div>
-                    <div class="timeline-content project-card">
-                        <span class="date-badge">Jan 2025 – Jun 2025</span>
-                        <h3>Certified Data Analyst</h3>
-                        <h4 class="issuer">Brain Mentors Pvt. Ltd.</h4>
-                        <p>Completed intensive training in core data analytics, database querying, and analytical problem-solving using Python and SQL.</p>
-                    </div>
-                </div>
-
-            </div>
-
-            <div class="fade-in" style="text-align: center; margin-top: 50px;">
-                <a href="Kartik_Tiwari_Resume.pdf" download="Kartik_Tiwari_Resume.pdf" class="btn-neon" aria-label="Download Kartik Tiwari's resume as PDF">
-                    <span>Download Resume (PDF)</span>
-                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
-                        <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path>
-                        <polyline points="7 10 12 15 17 10"></polyline>
-                        <line x1="12" y1="15" x2="12" y2="3"></line>
-                    </svg>
-                </a>
-            </div>
-
+      <li class="work-row reveal">
+        <div class="work-main">
+          <h3>Data Visualization Dashboard</h3>
+          <p>Turns raw JSON datasets into interactive charts, so patterns that are easy to miss in a spreadsheet become obvious at a glance.</p>
+          <div class="work-tags">
+            <span>JavaScript</span><span>Data Viz</span>
+          </div>
         </div>
-    </section>
-
-    <!-- ════════════════════════════════════════
-         FOOTER / CONTACT
-    ════════════════════════════════════════ -->
-    <footer id="contact" class="glass-footer" aria-label="Contact and social links">
-        <div class="footer-glow" aria-hidden="true"></div>
-
-        <div class="footer-content fade-in">
-            <h2 class="footer-title">Let's build something<br><span class="gradient-text">impactful.</span></h2>
-            <p class="footer-subtitle">Currently open for new opportunities and collaborations.</p>
-
-            <a href="mailto:kartiktiwari8790@gmail.com" class="btn-neon" aria-label="Send an email to Kartik Tiwari">
-                <span>Say Hello</span>
-                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
-                    <line x1="5" y1="12" x2="19" y2="12"></line>
-                    <polyline points="12 5 19 12 12 19"></polyline>
-                </svg>
-            </a>
-
-            <div class="social-links-modern">
-                <a href="https://linkedin.com/in/kartik-tiwari-8b2bb5353/" target="_blank" rel="noopener noreferrer" id="linkdin_color" class="social-icon" aria-label="LinkedIn profile">
-                    <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z"/></svg>
-                </a>
-                <a href="https://github.com/kartiktiwaridev7" target="_blank" rel="noopener noreferrer" class="social-icon" aria-label="GitHub profile">
-                    <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"/></svg>
-                </a>
-                <a href="https://x.com/KartikTiwa15064" target="_blank" rel="noopener noreferrer" id="X" class="social-icon" aria-label="X (Twitter) profile">
-                    <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
-                        <path d="M18.901 1.153h3.68l-8.04 9.19L24 22.846h-7.406l-5.8-7.584-6.638 7.584H.474l8.6-9.83L0 1.154h7.594l5.243 6.932L18.901 1.153zM17.61 20.644h2.039L6.486 3.24H4.298l13.312 17.404z"/>
-                    </svg>
-                </a>
-            </div>
-
-            <p class="copyright">&copy; 2026 Kartik Tiwari. All rights reserved.</p>
+        <div class="work-meta">
+          <a href="https://kartiktiwaridev7.github.io/Dashboard/" target="_blank" rel="noopener noreferrer" class="work-link">Live project <span aria-hidden="true">→</span></a>
         </div>
-    </footer>
+      </li>
 
-    <script src="script.js"></script>
+      <li class="work-row reveal">
+        <div class="work-main">
+          <h3>Student Attendance System</h3>
+          <p>A lightweight, backend-free attendance tracker for classrooms. Stores records with the Web Storage API and exports attendance history to CSV on demand.</p>
+          <div class="work-tags">
+            <span>HTML</span><span>CSS</span><span>JavaScript</span>
+          </div>
+        </div>
+        <div class="work-meta">
+          <a href="https://github.com/kartiktiwaridev7/Collage-Project/tree/main" target="_blank" rel="noopener noreferrer" class="work-link">Repository <span aria-hidden="true">→</span></a>
+        </div>
+      </li>
+
+      <li class="work-row reveal">
+        <div class="work-main">
+          <h3>Python Systems Suite</h3>
+          <p>A pair of OOP-driven Python applications — a banking system and a hospital management framework — built to practice core logic, file handling, and object-oriented design.</p>
+          <div class="work-tags">
+            <span>Python</span><span>OOP</span>
+          </div>
+        </div>
+        <div class="work-meta">
+          <a href="https://github.com/kartiktiwaridev7/Python-Project-s" target="_blank" rel="noopener noreferrer" class="work-link">Repository <span aria-hidden="true">→</span></a>
+        </div>
+      </li>
+
+    </ul>
+  </div>
+</section>
+
+<!-- ============== ABOUT ============== -->
+<section id="about" class="section section-alt" aria-labelledby="about-heading">
+  <div class="section-inner about-grid">
+
+    <div class="about-text">
+      <p class="eyebrow reveal">About</p>
+      <h2 id="about-heading" class="section-title reveal">Where interfaces meet data</h2>
+      <p class="reveal">
+        I'm a BCA student who ended up caring equally about two things that
+        don't usually share a portfolio: how an interface feels to use, and
+        what the data behind it is actually saying.
+      </p>
+      <p class="reveal">
+        Most of what I build sits at that intersection — frontend
+        applications with a machine-learning model doing real work
+        underneath, not just for show.
+      </p>
+    </div>
+
+    <div class="about-skills reveal">
+      <div class="skill-group">
+        <p class="skill-label">Data &amp; Machine Learning</p>
+        <div class="skill-tags">
+          <span>Python</span><span>Pandas &amp; NumPy</span><span>Scikit-learn</span><span>SQL</span><span>Power BI</span>
+        </div>
+      </div>
+      <div class="skill-group">
+        <p class="skill-label">Frontend Engineering</p>
+        <div class="skill-tags">
+          <span>HTML5</span><span>CSS3</span><span>JavaScript (ES6+)</span><span>Responsive Design</span>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<!-- ============== MILESTONES ============== -->
+<section id="milestones" class="section" aria-labelledby="milestones-heading">
+  <div class="section-inner">
+    <p class="eyebrow reveal">Milestones</p>
+    <h2 id="milestones-heading" class="section-title reveal">Along the way</h2>
+
+    <ol class="timeline">
+
+      <li class="timeline-row reveal">
+        <span class="timeline-date">Apr 2026</span>
+        <span class="timeline-node" aria-hidden="true">
+          <svg viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <circle cx="10" cy="8" r="4.5" stroke="currentColor" stroke-width="1.5"/>
+            <path d="M7.2 11.8 6 18l4-2 4 2-1.2-6.2" stroke="currentColor" stroke-width="1.5" stroke-linejoin="round"/>
+          </svg>
+        </span>
+        <div class="timeline-body">
+          <span class="timeline-source">Agent.ai &middot; Saumya Singh</span>
+          <h3>Certificate of Appreciation — Creating an AI Agent</h3>
+          <p>Issued for the LinkedIn Profile Coach agent, built and deployed independently on Agent.ai.</p>
+        </div>
+      </li>
+
+      <li class="timeline-row reveal">
+        <span class="timeline-date">Feb 2026</span>
+        <span class="timeline-node" aria-hidden="true">
+          <svg viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path d="M10 3c2.6 2.3 3.8 4.6 3.8 6.9A3.8 3.8 0 0 1 10 13.7a3.8 3.8 0 0 1-3.8-3.8C6.2 7.6 7.4 5.3 10 3Z" stroke="currentColor" stroke-width="1.5" stroke-linejoin="round"/>
+            <path d="M10 13.7V17" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/>
+          </svg>
+        </span>
+        <div class="timeline-body">
+          <span class="timeline-source">TERI School of Advanced Studies</span>
+          <h3>AI &amp; Sustainability Dialogue</h3>
+          <p>Panel discussions on the intersection of AI and climate solutions.</p>
+        </div>
+      </li>
+
+      <li class="timeline-row reveal">
+        <span class="timeline-date">Nov 2025</span>
+        <span class="timeline-node" aria-hidden="true">
+          <svg viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path d="M10 2.5 16 5v4.2c0 4-2.5 6.8-6 8.3-3.5-1.5-6-4.3-6-8.3V5l6-2.5Z" stroke="currentColor" stroke-width="1.5" stroke-linejoin="round"/>
+            <path d="M7.5 9.8 9.2 11.5 12.7 8" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+          </svg>
+        </span>
+        <div class="timeline-body">
+          <span class="timeline-source">HRIT University</span>
+          <h3>Cyber Security &amp; Ethical Hacking</h3>
+          <p>Seminars on modern threat mitigation and data protection.</p>
+        </div>
+      </li>
+
+      <li class="timeline-row reveal">
+        <span class="timeline-date">Jan – Jun 2025</span>
+        <span class="timeline-node" aria-hidden="true">
+          <svg viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path d="M4 16.5V11M10 16.5V6M16 16.5v-8" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/>
+            <path d="M3 16.5h14" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/>
+          </svg>
+        </span>
+        <div class="timeline-body">
+          <span class="timeline-source">Brain Mentors Pvt. Ltd.</span>
+          <h3>Certified Data Analyst</h3>
+          <p>Training in data analytics, database querying, and analytical problem-solving with Python and SQL.</p>
+        </div>
+      </li>
+
+    </ol>
+  </div>
+</section>
+
+<!-- ============== CONTACT / FOOTER ============== -->
+<footer id="contact" class="footer">
+  <div class="section-inner footer-inner">
+    <p class="eyebrow reveal">Contact</p>
+    <h2 class="footer-title reveal">Let's build something<br>worth <em>shipping</em>.</h2>
+    <p class="footer-sub reveal">Currently open for new opportunities and collaborations.</p>
+
+    <a href="mailto:kartiktiwari8790@gmail.com?subject=Hello%20Kartik" class="btn btn-primary reveal">Say hello</a>
+
+    <div class="footer-social reveal">
+      <a href="https://linkedin.com/in/kartik-tiwari-8b2bb5353/" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn profile">LinkedIn</a>
+      <a href="https://github.com/kartiktiwaridev7" target="_blank" rel="noopener noreferrer" aria-label="GitHub profile">GitHub</a>
+      <a href="https://x.com/KartikTiwa15064" target="_blank" rel="noopener noreferrer" aria-label="X profile">X</a>
+    </div>
+
+    <p class="footer-copy">&copy; <span id="year"></span> Kartik Tiwari.</p>
+  </div>
+</footer>
+
+<script src="script.js"></script>
 </body>
 </html>
