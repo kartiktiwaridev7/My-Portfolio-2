@@ -143,6 +143,7 @@ mark.name-mark {
 }
 
 .nav-links a {
+  position: relative;
   text-decoration: none;
   color: var(--text-muted);
   font-size: 0.92rem;
@@ -151,7 +152,24 @@ mark.name-mark {
   transition: color 0.25s var(--ease);
 }
 
+.nav-links a:not(.nav-resume)::after {
+  content: '';
+  position: absolute;
+  left: 14px;
+  right: 14px;
+  bottom: 5px;
+  height: 1px;
+  background: var(--accent);
+  transform: scaleX(0);
+  transform-origin: left;
+  transition: transform 0.3s var(--ease);
+}
+
 .nav-links a:hover { color: var(--text); }
+.nav-links a:not(.nav-resume):hover::after,
+.nav-links a.nav-active::after {
+  transform: scaleX(1);
+}
 
 .nav-links a.nav-active { color: var(--accent-strong); }
 
@@ -246,26 +264,95 @@ mark.name-mark {
 }
 
 .hero-media-frame {
-  aspect-ratio: 4 / 5;
+  position: relative;
+  aspect-ratio: 1 / 1;
   width: 100%;
+  max-width: 380px;
+  margin: 0 auto;
+}
+
+/* Clipping layer, separate from the ring, so the photo can zoom
+   on hover without the ring moving or getting cropped. */
+.hero-photo {
+  position: absolute;
+  inset: 0;
+  border-radius: 50%;
   overflow: hidden;
-  border-radius: 8px;
-  border: 1px solid var(--border-strong);
   background: var(--surface);
 }
 
-.hero-media-frame img {
+.hero-photo img {
   width: 100%;
   height: 100%;
   object-fit: cover;
   display: block;
   filter: grayscale(55%) contrast(1.08) brightness(0.92) sepia(8%);
-  /* shown only if the image file below is missing/renamed */
-  color: var(--text-dim);
-  font-family: var(--font-mono);
-  font-size: 0.8rem;
-  text-align: center;
-  padding: 20px;
+  transform: scale(1);
+  transition: transform 0.7s var(--ease), filter 0.7s var(--ease);
+}
+
+.hero-media-frame:hover .hero-photo img {
+  transform: scale(1.055);
+  filter: grayscale(35%) contrast(1.1) brightness(0.96) sepia(6%);
+}
+
+/* Hand-drawn circle, sketched around the portrait like a quick
+   marker annotation — two overlapping passes for an imperfect,
+   drawn-twice feel instead of a stiff, geometric ring. It sketches
+   itself in once the hero reveals, then the whole photo settles
+   into a slow, barely-there float. */
+.frame-scribble {
+  position: absolute;
+  top: -9%;
+  left: -9%;
+  width: 118%;
+  height: 118%;
+  z-index: 2;
+  overflow: visible;
+  pointer-events: none;
+}
+
+.scribble-line {
+  fill: none;
+  stroke-linecap: round;
+  stroke-dasharray: 100;
+  stroke-dashoffset: 100;
+  transition: stroke 0.4s var(--ease);
+}
+
+.scribble-line-a {
+  stroke: var(--accent);
+  stroke-width: 4;
+  opacity: 0.92;
+}
+
+.scribble-line-b {
+  stroke: var(--accent-strong);
+  stroke-width: 2.25;
+  opacity: 0.55;
+}
+
+.hero-media-frame:hover .scribble-line-a { stroke: var(--accent-strong); }
+
+.hero-media.in .scribble-line-a {
+  animation: draw-ring 1s var(--ease) 0.15s forwards;
+}
+
+.hero-media.in .scribble-line-b {
+  animation: draw-ring 1.1s var(--ease) 0.32s forwards;
+}
+
+.hero-media.in .hero-media-frame {
+  animation: photo-float 6.5s ease-in-out 1.4s infinite;
+}
+
+@keyframes draw-ring {
+  to { stroke-dashoffset: 0; }
+}
+
+@keyframes photo-float {
+  0%, 100% { transform: translateY(0); }
+  50%      { transform: translateY(-8px); }
 }
 
 .hero-media-tag {
@@ -278,11 +365,26 @@ mark.name-mark {
 }
 
 .status-dot {
+  position: relative;
   width: 7px;
   height: 7px;
   border-radius: 50%;
   background: var(--accent);
   flex-shrink: 0;
+}
+
+.status-dot::after {
+  content: '';
+  position: absolute;
+  inset: -4px;
+  border-radius: 50%;
+  border: 1px solid var(--accent);
+  animation: dot-pulse 2.4s ease-out infinite;
+}
+
+@keyframes dot-pulse {
+  0%   { transform: scale(0.5); opacity: 0.8; }
+  100% { transform: scale(2.1); opacity: 0; }
 }
 
 /* --- BUTTONS --- */
@@ -331,12 +433,35 @@ mark.name-mark {
 .section-inner { max-width: var(--container); margin: 0 auto; }
 
 .section-title {
+  position: relative;
   font-family: var(--font-display);
   font-weight: 500;
   font-size: clamp(1.9rem, 3.4vw, 2.6rem);
   letter-spacing: -0.01em;
   margin-bottom: 56px;
   max-width: 18ch;
+}
+
+.title-scribble {
+  position: absolute;
+  left: 2px;
+  bottom: -28px;
+  width: 110px;
+  height: 13px;
+  overflow: visible;
+}
+
+.title-scribble path {
+  fill: none;
+  stroke: var(--accent);
+  stroke-width: 2.5;
+  stroke-linecap: round;
+  stroke-dasharray: 100;
+  stroke-dashoffset: 100;
+}
+
+.section-title.in .title-scribble path {
+  animation: draw-ring 0.8s var(--ease) 0.2s forwards;
 }
 
 /* ==================================================================
@@ -462,17 +587,19 @@ mark.name-mark {
 .skill-tags { display: flex; flex-wrap: wrap; gap: 10px; }
 
 .skill-tags span {
+  display: inline-block;
   font-size: 0.9rem;
   color: var(--text);
   border: 1px solid var(--border);
   padding: 7px 14px;
   border-radius: 6px;
-  transition: border-color 0.25s var(--ease), color 0.25s var(--ease);
+  transition: border-color 0.25s var(--ease), color 0.25s var(--ease), transform 0.25s var(--ease);
 }
 
 .skill-tags span:hover {
   border-color: var(--accent);
   color: var(--accent-strong);
+  transform: translateY(-2px);
 }
 
 /* ==================================================================
@@ -653,6 +780,14 @@ mark.name-mark {
 @media (prefers-reduced-motion: reduce) {
   .reveal { opacity: 1; transform: none; transition: none; }
   html { scroll-behavior: auto; }
+
+  .hero-media.in .hero-media-frame { animation: none; }
+  .scribble-line, .title-scribble path {
+    animation: none !important;
+    stroke-dashoffset: 0;
+  }
+  .status-dot::after { animation: none; display: none; }
+  .hero-photo img { transition: none; }
 }
 
 /* ==================================================================

@@ -99,12 +99,29 @@
     <div class="hero-media reveal">
       <div class="hero-media-frame">
         <!--
-          Replace "profile.jpg" below with your own file.
-          Put the image in the same folder as index.html,
-          named exactly "profile.jpg" (no spaces in filenames —
-          spaces break on some hosts/case-sensitive servers).
+          Replace "Portfolio.jpeg" below with your own file.
+          Put the image in the same folder as index.html.
+          A square-ish, centered-face photo crops best into the circle.
         -->
-        <img src="Portfolio.jpeg" alt="Portrait of Kartik Tiwari" loading="eager" width="800" height="1000">
+        <div class="hero-photo">
+          <img src="Portfolio.jpeg" alt="Portrait of Kartik Tiwari" loading="eager" width="800" height="800">
+        </div>
+
+        <!-- Hand-drawn circle frame around the portrait, sketches itself in on load -->
+        <!-- <svg class="frame-scribble" viewBox="0 0 440 440" aria-hidden="true" focusable="false">
+          <defs>
+            <filter id="scribbleRough1" x="-30%" y="-30%" width="160%" height="160%">
+              <feTurbulence type="fractalNoise" baseFrequency="0.014 0.03" numOctaves="2" seed="4" result="n"/>
+              <feDisplacementMap in="SourceGraphic" in2="n" scale="15" xChannelSelector="R" yChannelSelector="G"/>
+            </filter>
+            <filter id="scribbleRough2" x="-30%" y="-30%" width="160%" height="160%">
+              <feTurbulence type="fractalNoise" baseFrequency="0.02 0.045" numOctaves="2" seed="9" result="n2"/>
+              <feDisplacementMap in="SourceGraphic" in2="n2" scale="11" xChannelSelector="R" yChannelSelector="G"/>
+            </filter>
+          </defs>
+          <circle class="scribble-line scribble-line-a" cx="220" cy="220" r="196" pathLength="100" filter="url(#scribbleRough1)"/>
+          <circle class="scribble-line scribble-line-b" cx="220" cy="220" r="201" pathLength="100" filter="url(#scribbleRough2)"/>
+        </svg> -->
       </div>
       <p class="hero-media-tag">
         <span class="status-dot" aria-hidden="true"></span>
@@ -119,7 +136,11 @@
 <section id="work" class="section" aria-labelledby="work-heading">
   <div class="section-inner">
     <p class="eyebrow reveal">Selected Work</p>
-    <h2 id="work-heading" class="section-title reveal">A few things I've built</h2>
+    <h2 id="work-heading" class="section-title reveal"> Things that I've built
+      <svg class="title-scribble" viewBox="0 0 140 16" aria-hidden="true" focusable="false">
+        <path d="M3 10 C 30 4, 55 13, 80 7 C 100 3, 118 11, 137 6" pathLength="100"/>
+      </svg>
+    </h2>
 
     <ul class="work-list">
 
@@ -198,7 +219,11 @@
 
     <div class="about-text">
       <p class="eyebrow reveal">About</p>
-      <h2 id="about-heading" class="section-title reveal">Where interfaces meet data</h2>
+      <h2 id="about-heading" class="section-title reveal">Where interfaces meet data
+        <svg class="title-scribble" viewBox="0 0 140 16" aria-hidden="true" focusable="false">
+          <path d="M3 8 C 26 13, 52 3, 78 9 C 102 14, 116 5, 137 9" pathLength="100"/>
+        </svg>
+      </h2>
       <p class="reveal">
         I'm a BCA student who ended up caring equally about two things that
         don't usually share a portfolio: how an interface feels to use, and
@@ -233,7 +258,11 @@
 <section id="milestones" class="section" aria-labelledby="milestones-heading">
   <div class="section-inner">
     <p class="eyebrow reveal">Milestones</p>
-    <h2 id="milestones-heading" class="section-title reveal">Along the way</h2>
+    <h2 id="milestones-heading" class="section-title reveal">Along the way
+      <svg class="title-scribble" viewBox="0 0 140 16" aria-hidden="true" focusable="false">
+        <path d="M3 9 C 24 4, 48 14, 72 8 C 96 2, 114 12, 137 7" pathLength="100"/>
+      </svg>
+    </h2>
 
     <ol class="timeline">
 
