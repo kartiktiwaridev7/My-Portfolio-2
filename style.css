@@ -465,6 +465,68 @@ mark.name-mark {
 }
 
 /* ==================================================================
+   STATS
+   ================================================================== */
+.stats-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  border: 1px solid var(--border);
+  border-radius: 12px;
+  overflow: hidden;
+}
+
+.stat-item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 6px;
+  text-align: center;
+  padding: 36px 20px;
+  text-decoration: none;
+  border-right: 1px solid var(--border);
+  transition: background 0.3s var(--ease);
+}
+
+.stat-item:last-child { border-right: none; }
+
+/* Only the GitHub stat is a link — give it a pointer + hover cue */
+a.stat-item:hover { background: rgba(255,255,255,0.03); }
+a.stat-item:hover .stat-number { color: var(--accent-strong); }
+
+.stat-number {
+  font-family: var(--font-display);
+  font-weight: 500;
+  font-size: clamp(2rem, 4vw, 2.75rem);
+  line-height: 1;
+  letter-spacing: -0.01em;
+  color: var(--accent-strong);
+  font-variant-numeric: tabular-nums;
+  transition: color 0.25s var(--ease);
+}
+
+.stat-label {
+  font-family: var(--font-mono);
+  font-size: 0.76rem;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+  color: var(--text-muted);
+  margin-top: 2px;
+}
+
+.stat-sub {
+  font-family: var(--font-mono);
+  font-size: 0.72rem;
+  color: var(--text-dim);
+  margin-top: 2px;
+}
+
+@media (max-width: 860px) {
+  .stats-grid { grid-template-columns: 1fr; }
+  .stat-item { border-right: none; border-bottom: 1px solid var(--border); }
+  .stat-item:last-child { border-bottom: none; }
+}
+
+/* ==================================================================
    WORK
    ================================================================== */
 .work-list { border-top: 1px solid var(--border); }

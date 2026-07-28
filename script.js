@@ -89,6 +89,97 @@ document.addEventListener('DOMContentLoaded', () => {
 
   updateOnScroll();
 
+  /* ---------- Stats: auto-derived counts + count-up + live GitHub data ----------
+     Milestone count is read straight from the DOM, so this section never
+     needs manual updates when the timeline changes. Contributions come from
+     a public, unofficial GitHub contributions API (no auth needed). */
+  const statsSection = document.getElementById('stats');
+
+  if (statsSection) {
+    const prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+    const GITHUB_USER = 'kartiktiwaridev7';
+    const PROGRAM_START_YEAR = 2023; // BCA 2023–2026
+
+    const milestoneCount = document.querySelectorAll('.timeline-row').length;
+    const yearsBuilding   = Math.max(1, new Date().getFullYear() - PROGRAM_START_YEAR);
+
+    const statMilestones = document.getElementById('statMilestones');
+    const statYears       = document.getElementById('statYears');
+    const statContrib     = document.getElementById('statContrib');
+    const githubActivity  = document.getElementById('githubActivity');
+
+    function animateCount(el, target, duration = 1100) {
+      if (!el || target == null) return;
+      if (prefersReducedMotion || !target) {
+        el.textContent = target;
+        return;
+      }
+      const start = performance.now();
+      function step(now) {
+        const progress = Math.min((now - start) / duration, 1);
+        const eased = 1 - Math.pow(1 - progress, 3); // ease-out cubic
+        el.textContent = Math.round(eased * target);
+        if (progress < 1) requestAnimationFrame(step);
+        else el.textContent = target;
+      }
+      requestAnimationFrame(step);
+    }
+
+    let githubData = null;      // filled once the fetch resolves
+    let sectionVisible = false; // filled once scrolled into view
+    let githubAnimated = false; // guards against double-triggering
+
+    function tryAnimateGithub() {
+      if (!sectionVisible || !githubData || githubAnimated) return;
+      githubAnimated = true;
+      if (githubData.contributions != null) {
+        animateCount(statContrib, githubData.contributions);
+      } else {
+        statContrib.style.display = 'none';
+      }
+      githubActivity.textContent = githubData.activityText;
+    }
+
+    const currentYear = new Date().getFullYear();
+
+    fetch(`https://github-contributions-api.jogruber.de/v4/${GITHUB_USER}?y=${currentYear}`)
+      .then(res => (res.ok ? res.json() : Promise.reject()))
+      .then(data => {
+        const total = (data && data.total && data.total[currentYear] != null)
+          ? data.total[currentYear]
+          : (data && Array.isArray(data.contributions)
+              ? data.contributions.reduce((sum, d) => sum + (d.count || 0), 0)
+              : null);
+
+        if (total == null) throw new Error('no total available');
+
+        githubData = {
+          contributions: total,
+          activityText: `In ${currentYear} so far`
+        };
+        tryAnimateGithub();
+      })
+      .catch(() => {
+        // API rate-limited or offline — degrade gracefully, no broken UI.
+        githubData = { contributions: null, activityText: 'View profile →' };
+        tryAnimateGithub();
+      });
+
+    const statsObserver = new IntersectionObserver(entries => {
+      entries.forEach(entry => {
+        if (!entry.isIntersecting) return;
+        sectionVisible = true;
+        animateCount(statMilestones, milestoneCount);
+        animateCount(statYears, yearsBuilding);
+        tryAnimateGithub();
+        statsObserver.unobserve(entry.target);
+      });
+    }, { threshold: 0.3 });
+
+    statsObserver.observe(statsSection);
+  }
+
   /* ---------- Footer year ---------- */
   const yearEl = document.getElementById('year');
   if (yearEl) yearEl.textContent = new Date().getFullYear();
