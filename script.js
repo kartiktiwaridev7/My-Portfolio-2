@@ -72,10 +72,12 @@ document.addEventListener('DOMContentLoaded', () => {
   let scrollTicking = false;
 
   function updateOnScroll() {
-    nav.classList.toggle('scrolled', window.scrollY > 12);
+    if (nav) nav.classList.toggle('scrolled', window.scrollY > 12);
 
-    const height = document.documentElement.scrollHeight - window.innerHeight;
-    line.style.width = height > 0 ? `${(window.scrollY / height) * 100}%` : '0%';
+    if (line) {
+      const height = document.documentElement.scrollHeight - window.innerHeight;
+      line.style.width = height > 0 ? `${(window.scrollY / height) * 100}%` : '0%';
+    }
 
     scrollTicking = false;
   }
@@ -108,9 +110,18 @@ document.addEventListener('DOMContentLoaded', () => {
     const statYears       = document.getElementById('statYears');
     const statContrib     = document.getElementById('statContrib');
     const githubActivity  = document.getElementById('githubActivity');
+    const statMilestonesSr = document.getElementById('statMilestonesSr');
+    const statYearsSr      = document.getElementById('statYearsSr');
+    const statContribSr    = document.getElementById('statContribSr');
 
-    function animateCount(el, target, duration = 1100) {
+    // The visible number animates purely for visual effect and is
+    // hidden from assistive tech (aria-hidden). Screen readers instead
+    // get the final value written once, directly, via the paired
+    // .sr-only span — no rapid-fire announcements mid count-up.
+    function animateCount(el, target, srEl, duration = 1100) {
       if (!el || target == null) return;
+      if (srEl) srEl.textContent = String(target);
+
       if (prefersReducedMotion || !target) {
         el.textContent = target;
         return;
@@ -134,18 +145,25 @@ document.addEventListener('DOMContentLoaded', () => {
       if (!sectionVisible || !githubData || githubAnimated) return;
       githubAnimated = true;
       if (githubData.contributions != null) {
-        animateCount(statContrib, githubData.contributions);
+        animateCount(statContrib, githubData.contributions, statContribSr);
       } else {
         statContrib.style.display = 'none';
+        if (statContribSr) statContribSr.textContent = '';
       }
       githubActivity.textContent = githubData.activityText;
     }
 
     const currentYear = new Date().getFullYear();
 
-    fetch(`https://github-contributions-api.jogruber.de/v4/${GITHUB_USER}?y=${currentYear}`)
+    // Unofficial, rate-limited API — bound the wait so a hung request
+    // can't leave the "Checking activity…" label stuck forever.
+    const controller = new AbortController();
+    const fetchTimeout = setTimeout(() => controller.abort(), 6000);
+
+    fetch(`https://github-contributions-api.jogruber.de/v4/${GITHUB_USER}?y=${currentYear}`, { signal: controller.signal })
       .then(res => (res.ok ? res.json() : Promise.reject()))
       .then(data => {
+        clearTimeout(fetchTimeout);
         const total = (data && data.total && data.total[currentYear] != null)
           ? data.total[currentYear]
           : (data && Array.isArray(data.contributions)
@@ -161,7 +179,8 @@ document.addEventListener('DOMContentLoaded', () => {
         tryAnimateGithub();
       })
       .catch(() => {
-        // API rate-limited or offline — degrade gracefully, no broken UI.
+        // API rate-limited, timed out, or offline — degrade gracefully, no broken UI.
+        clearTimeout(fetchTimeout);
         githubData = { contributions: null, activityText: 'View profile →' };
         tryAnimateGithub();
       });
@@ -170,8 +189,8 @@ document.addEventListener('DOMContentLoaded', () => {
       entries.forEach(entry => {
         if (!entry.isIntersecting) return;
         sectionVisible = true;
-        animateCount(statMilestones, milestoneCount);
-        animateCount(statYears, yearsBuilding);
+        animateCount(statMilestones, milestoneCount, statMilestonesSr);
+        animateCount(statYears, yearsBuilding, statYearsSr);
         tryAnimateGithub();
         statsObserver.unobserve(entry.target);
       });

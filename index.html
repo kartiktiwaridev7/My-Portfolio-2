@@ -3,6 +3,8 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="theme-color" content="#0D0E10">
+<meta name="color-scheme" content="dark">
 
 <title>Kartik Tiwari — Frontend Developer, Data & ML</title>
 <meta name="description" content="Kartik Tiwari is a BCA student building frontend applications and machine-learning-integrated tools. Selected work, skills, and milestones.">
@@ -104,24 +106,8 @@
           A square-ish, centered-face photo crops best into the circle.
         -->
         <div class="hero-photo">
-          <img src="Portfolio.jpeg" alt="Portrait of Kartik Tiwari" loading="eager" width="800" height="800">
+          <img src="Portfolio.jpeg" alt="Portrait of Kartik Tiwari" loading="eager" fetchpriority="high" width="800" height="800">
         </div>
-
-        <!-- Hand-drawn circle frame around the portrait, sketches itself in on load -->
-        <!-- <svg class="frame-scribble" viewBox="0 0 440 440" aria-hidden="true" focusable="false">
-          <defs>
-            <filter id="scribbleRough1" x="-30%" y="-30%" width="160%" height="160%">
-              <feTurbulence type="fractalNoise" baseFrequency="0.014 0.03" numOctaves="2" seed="4" result="n"/>
-              <feDisplacementMap in="SourceGraphic" in2="n" scale="15" xChannelSelector="R" yChannelSelector="G"/>
-            </filter>
-            <filter id="scribbleRough2" x="-30%" y="-30%" width="160%" height="160%">
-              <feTurbulence type="fractalNoise" baseFrequency="0.02 0.045" numOctaves="2" seed="9" result="n2"/>
-              <feDisplacementMap in="SourceGraphic" in2="n2" scale="11" xChannelSelector="R" yChannelSelector="G"/>
-            </filter>
-          </defs>
-          <circle class="scribble-line scribble-line-a" cx="220" cy="220" r="196" pathLength="100" filter="url(#scribbleRough1)"/>
-          <circle class="scribble-line scribble-line-b" cx="220" cy="220" r="201" pathLength="100" filter="url(#scribbleRough2)"/>
-        </svg> -->
       </div>
       <p class="hero-media-tag">
         <span class="status-dot" aria-hidden="true"></span>
@@ -144,20 +130,23 @@
 
     <div class="stats-grid">
       <div class="stat-item reveal">
-        <span class="stat-number" id="statMilestones" data-count="0">0</span>
+        <span class="stat-number" id="statMilestones" data-count="0" aria-hidden="true">0</span>
         <span class="stat-label">Certifications &amp; Trainings</span>
+        <span class="sr-only" id="statMilestonesSr"></span>
       </div>
 
       <div class="stat-item reveal">
-        <span class="stat-number" id="statYears" data-count="0">0</span>
+        <span class="stat-number" id="statYears" data-count="0" aria-hidden="true">0</span>
         <span class="stat-label">Years Building</span>
+        <span class="sr-only" id="statYearsSr"></span>
       </div>
 
       <a href="https://github.com/kartiktiwaridev7" target="_blank" rel="noopener noreferrer"
          class="stat-item reveal" id="githubStatItem" aria-label="View Kartik's GitHub contribution activity">
-        <span class="stat-number" id="statContrib" data-count="0">0</span>
+        <span class="stat-number" id="statContrib" data-count="0" aria-hidden="true">0</span>
         <span class="stat-label"> Github Contribution's</span>
         <span class="stat-sub" id="githubActivity">Checking activity&hellip;</span>
+        <span class="sr-only" id="statContribSr"></span>
       </a>
     </div>
   </div>
